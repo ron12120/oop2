@@ -78,7 +78,6 @@ class SalePost(Post):
         if not self.user.network.is_active(self.user):
             raise Exception("you must be logged in to take this action")
 
-        print(password, self.user.password)
         if password == self.user.password:
             self.price = self.price * (1 - amount / 100)
             print(f'Discount on {self.user.name} product! the new price is: {self.price}')
